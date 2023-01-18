@@ -1,9 +1,3 @@
-/**
- * (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary.
- */
-
-import { timeDriver } from 'Animation';
-
 export const Diagnostics = require('Diagnostics');
 const Animation = require('Animation');
 const DeviceMotion = require('DeviceMotion');
@@ -122,18 +116,12 @@ const getColorTexture = (hue) => Reactive.HSVA(hue, 1.0, 1.0, 1.0).toRGBA();
     const threshold = Math.PI / 4;
     // switch to left horizontal
     if (newValue > threshold && orientation !== ORIENTATION_LEFT) {
-      // orientation = ORIENTATION_LEFT;
       setButtonTransforms(ORIENTATION_LEFT)
-      // setButtonTransforms(0, -1 * Math.PI / 2);
     } // switch to vertical
     else if (newValue > 0 && newValue < threshold && orientation !== ORIENTATION_VERTICAL) {
-      // setButtonTransforms(0, 0);
-      // orientation = ORIENTATION_VERTICAL;
       setButtonTransforms(ORIENTATION_VERTICAL)
     } // switch to right horizontal
     else if (newValue < -1 * threshold && orientation !== ORIENTATION_RIGHT) {
-      // setButtonTransforms(0, Math.PI / 2);
-      // orientation = ORIENTATION_RIGHT;
       setButtonTransforms(ORIENTATION_RIGHT)
     }
   });
